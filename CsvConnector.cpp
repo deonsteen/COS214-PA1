@@ -1,6 +1,12 @@
 #include "CsvConnector.h"
 
-std::vector<std::string> extract() {
+CsvConnector::CsvConnector() : Connector("csv") {
+}
+
+CsvConnector::~CsvConnector() {
+}
+
+std::vector<std::string> CsvConnector::extract() {
     std::vector<std::string> result;
     result.push_back("CSV:x1");
     result.push_back("CSV:x2");

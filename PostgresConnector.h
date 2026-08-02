@@ -6,7 +6,9 @@
 class PostgresConnector: public Connector {
 
 public:
-    virtual std::vector<std::string>extract();
+    PostgresConnector();
+    virtual ~PostgresConnector() override;
+    virtual std::vector<std::string>extract() override;
 };
 
 

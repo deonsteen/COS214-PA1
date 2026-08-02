@@ -6,7 +6,7 @@
 class PostgresFactory : public ConnectorFactory {
 
 public:
-    virtual Connector* createConnector();
+    virtual Connector* createConnector() override;
 };
 
 

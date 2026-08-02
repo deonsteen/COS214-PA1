@@ -6,7 +6,9 @@
 class CsvConnector: public Connector {
 
     public:
-    virtual std::vector<std::string>extract();
+    CsvConnector();
+    virtual ~CsvConnector() override;
+    virtual std::vector<std::string>extract() override;
 };
 
 

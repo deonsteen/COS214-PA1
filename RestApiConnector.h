@@ -3,10 +3,12 @@
 
 #include "Connector.h"
 
-class RestApiConnector {
+class RestApiConnector : public Connector {
 
     public:
-    virtual std::vector<std::string>extract();
+    RestApiConnector();
+    virtual ~RestApiConnector() override;
+    virtual std::vector<std::string>extract() override;
 };
 
 

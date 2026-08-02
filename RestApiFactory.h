@@ -2,11 +2,12 @@
 #define COS214_PA1_RESTAPIFACTORY_H
 
 #include "ConnectorFactory.h"
+#include "Connector.h"
 
 class RestApiFactory :public ConnectorFactory {
 
 public:
-    virtual Connector* createConnector();
+    virtual Connector* createConnector() override;
 };
 
 

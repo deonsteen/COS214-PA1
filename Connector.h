@@ -11,8 +11,8 @@ protected:
     std::string source;
 
 public:
-    Connector(std::string source);
-    virtual ~Connector();
+    Connector(const std::string& source);
+    virtual ~Connector() =default;
     virtual std::vector<std::string> extract() = 0;
     std::string getSource() const;
 };
