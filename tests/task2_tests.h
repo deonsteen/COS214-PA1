@@ -1,0 +1,6 @@
+#ifndef COS214_PA1_TESTS_TASK2_TESTS_H
+#define COS214_PA1_TESTS_TASK2_TESTS_H
+
+void runTask2Tests();
+
+#endif // COS214_PA1_TESTS_TASK2_TESTS_H
