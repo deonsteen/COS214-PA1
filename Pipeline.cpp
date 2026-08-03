@@ -1,21 +1,55 @@
-#include "../Pipeline.h"
+#include "Pipeline.h"
 
-Pipeline::Pipeline() {
-    this->stage = 0;
+#include <iostream>
+
+#include "Connector.h"
+
+Pipeline::Pipeline(ConnectorFactory *factory) : factory(factory), stage(0)
+{
 }
 
-Pipeline::~Pipeline() {
+Pipeline::~Pipeline()
+{
+    delete factory;
 
-}
-
-RunCheckpoint* Pipeline::createCheckpoint() const {
-
-    return new RunCheckpoint(this->stage, this->records);
-}
-
-void Pipeline::restore(RunCheckpoint* checkpoint) {
-    if (checkpoint != nullptr) {
-        this->stage = checkpoint->getStage();
-        this->records = checkpoint->getRecords();
+    for (size_t i = 0; i < steps.size(); ++i)
+    {
+        delete steps[i];
     }
+}
+
+void Pipeline::addStep(Transformation *step)
+{
+    if (step == nullptr)
+    {
+        return;
+    }
+
+    steps.push_back(step);
+}
+
+void Pipeline::run()
+{
+    connect();
+    extract();
+    transform();
+    load();
+}
+
+void Pipeline::connect()
+{
+    Connector *connector = factory->createConnector();
+    std::cout << "Connecting to " << connector->getSource() << "\n";
+    stage = 1;
+    delete connector;
+}
+
+void Pipeline::transform()
+{
+    for (size_t i = 0; i < steps.size(); ++i)
+    {
+        records = steps[i]->apply(records);
+    }
+
+    stage = 3;
 }
