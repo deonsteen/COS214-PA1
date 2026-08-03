@@ -13,3 +13,13 @@ public:
 };
 
 #endif // COS214_PA1_CSVCONNECTOR_H
+class CsvConnector: public Connector {
+
+    public:
+    CsvConnector();
+    virtual ~CsvConnector() override;
+    virtual std::vector<std::string>extract() override;
+};
+
+
+#endif //COS214_PA1_CSVCONNECTOR_H

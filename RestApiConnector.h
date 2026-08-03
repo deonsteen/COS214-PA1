@@ -13,3 +13,13 @@ public:
 };
 
 #endif // COS214_PA1_RESTAPICONNECTOR_H
+class RestApiConnector : public Connector {
+
+    public:
+    RestApiConnector();
+    virtual ~RestApiConnector() override;
+    virtual std::vector<std::string>extract() override;
+};
+
+
+#endif //COS214_PA1_RESTAPICONNECTOR_H

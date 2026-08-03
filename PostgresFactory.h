@@ -11,3 +11,11 @@ public:
 };
 
 #endif // COS214_PA1_POSTGRESFACTORY_H
+class PostgresFactory : public ConnectorFactory {
+
+public:
+    virtual Connector* createConnector() override;
+};
+
+
+#endif //COS214_PA1_POSTGRESFACTORY_H

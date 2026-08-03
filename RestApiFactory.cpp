@@ -3,5 +3,10 @@
 
 Connector *RestApiFactory::createConnector()
 {
+#include "Connector.h"
+
+
+Connector *RestApiFactory::createConnector() {
+
     return new RestApiConnector();
 }

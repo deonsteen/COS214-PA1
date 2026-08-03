@@ -3,5 +3,7 @@
 
 Connector *CsvFactory::createConnector()
 {
+Connector* CsvFactory::createConnector() {
+
     return new CsvConnector();
 }

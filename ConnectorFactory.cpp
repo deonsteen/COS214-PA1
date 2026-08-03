@@ -3,4 +3,5 @@
 ConnectorFactory::~ConnectorFactory()
 {
     // no state owned by the base class
+ConnectorFactory::~ConnectorFactory() {
 }

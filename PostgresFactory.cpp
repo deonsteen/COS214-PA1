@@ -3,5 +3,6 @@
 
 Connector *PostgresFactory::createConnector()
 {
+Connector* PostgresFactory::createConnector() {
     return new PostgresConnector();
 }
