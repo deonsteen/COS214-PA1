@@ -3,6 +3,14 @@
 
 #include "ConnectorFactory.h"
 
+class PostgresFactory : public ConnectorFactory
+{
+
+public:
+    virtual Connector *createConnector();
+};
+
+#endif // COS214_PA1_POSTGRESFACTORY_H
 class PostgresFactory : public ConnectorFactory {
 
 public:

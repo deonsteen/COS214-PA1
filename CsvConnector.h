@@ -3,6 +3,16 @@
 
 #include "Connector.h"
 
+class CsvConnector : public Connector
+{
+
+public:
+    CsvConnector();
+
+    virtual std::vector<std::string> extract();
+};
+
+#endif // COS214_PA1_CSVCONNECTOR_H
 class CsvConnector: public Connector {
 
     public:

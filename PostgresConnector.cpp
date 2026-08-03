@@ -1,5 +1,11 @@
 #include "PostgresConnector.h"
 
+PostgresConnector::PostgresConnector() : Connector("postgres")
+{
+}
+
+std::vector<std::string> PostgresConnector::extract()
+{
 PostgresConnector::PostgresConnector() : Connector("postgres") {
 }
 
@@ -13,4 +19,5 @@ std::vector<std::string> PostgresConnector::extract() {
     result.push_back("PG:002");
     result.push_back("PG:003");
     return result;
+}
 }

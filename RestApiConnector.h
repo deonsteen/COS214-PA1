@@ -3,6 +3,16 @@
 
 #include "Connector.h"
 
+class RestApiConnector : public Connector
+{
+
+public:
+    RestApiConnector();
+
+    virtual std::vector<std::string> extract();
+};
+
+#endif // COS214_PA1_RESTAPICONNECTOR_H
 class RestApiConnector : public Connector {
 
     public:

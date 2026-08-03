@@ -1,5 +1,11 @@
 #include "RestApiConnector.h"
 
+RestApiConnector::RestApiConnector() : Connector("restapi")
+{
+}
+
+std::vector<std::string> RestApiConnector::extract()
+{
 RestApiConnector::RestApiConnector() : Connector("restapi") {
 }
 
